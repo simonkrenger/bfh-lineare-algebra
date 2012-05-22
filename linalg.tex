@@ -1,0 +1,178 @@
+%Simon Krenger: Lineare Algebra
+\documentclass{report}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+
+\newtheorem{mydef}{Definition}
+
+\title{Lineare Algebra}
+\author{Simon Krenger}
+
+\begin{document}
+\maketitle
+\chapter{Vektoren}
+\section{Vektorrechnung}
+Vektor von Punkt A zu Punkt B\begin{equation}\vec{AB} = \vec{b} - \vec{a}\end{equation}
+Nullvektor\begin{equation}\vec{a} + (- \vec{a}) = \vec{0}\end{equation}
+Kommutativität (+)\begin{equation}\vec{a} + \vec{b} = \vec{b} + \vec{a}\end{equation}
+Assoziativität (+)\begin{equation}(\vec{a} + \vec{b}) + \vec{c} = \vec{a} + (\vec{b} + \vec{c})\end{equation}
+Neutrales Element (+)\begin{equation}\vec{u} + \vec{0} = \vec{0} + \vec{u} = \vec{u}\end{equation}
+Inverses Element (+)\begin{equation}\vec{u} + (- \vec{u}) = \vec{0}\end{equation}
+Assozativität ($\cdot$)\begin{equation}\alpha \cdot (\beta \cdot \vec{u}) = (\alpha \cdot \beta) \cdot \vec{u}\end{equation}
+Distributiv I\begin{equation}\alpha \cdot (\vec{u} + \vec{u})  = (\alpha \cdot \vec{u})+(\alpha \cdot \vec{v})\end{equation}
+Betrag\begin{equation}|\vec{a}| = \sqrt{{a_x}^2+{a_y}^2+{a_z}^2}\end{equation}
+Vektor mit Länge 1\begin{equation}\frac{\vec{w}}{|\vec{w}|} = \frac{1}{\vec{w}} \cdot \vec{w}\end{equation}
+Die Vektoren $\vec{a}$, $\vec{b}$, $\vec{c}$ heissen linear unabhängig, wenn aus 
+\begin{equation}\alpha \cdot \vec{a} + \beta \cdot \vec{b} + \gamma \cdot \vec{c} = \vec{0} \quad \mbox{also} \quad \alpha = \beta = \gamma = 0\end{equation}
+Skalarprodukt
+\begin{equation}\vec{a} \cdot \vec{b} = a_1b_1 + a_2b_2 + a_3b_3\end{equation}
+\begin{equation}\vec{a} \cdot \vec{b} = |\vec{a}| \cdot |\vec{b}| \cdot \cos{\phi}\end{equation}
+Der Betrag von $\vec{u}$ gleich der Quadratwurzel des Skalarprodukts von $\vec{u}$ mit sich selbst
+\begin{equation}\vec{u} \cdot \vec{u} = {|\vec{u}|}^2\end{equation}
+Orthogonalprojektion von $\vec{u}$ auf $\vec{a}$
+\begin{equation}proj_a\vec{u} = \frac{\vec{u} \cdot \vec{a}}{{|\vec{a}|}^2} \cdot \vec{a}\end{equation}
+Vektorprodukt (nur $\mathbb{R}^3$)
+\begin{equation}\vec{a} \times \vec{b} = det\left(\begin{matrix}e_1 & e_2 & e_3 \\ a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3\end{matrix}\right) = (a_2b_3-a_3b_2)e_1 + (a_3b_1-a_1b_3)e_2 + (a_1b_2-a_2b_1)e_3\end{equation}
+Spatprodukt
+\begin{equation}\vec{u} \cdot (\vec{v} \times \vec{w}) = [\vec{u}, \vec{v}, \vec{w}] = \left|\begin{matrix}u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3\end{matrix}\right|\end{equation}
+Volumen eines Spates
+\begin{equation}V = |(\vec{a} \times \vec{b}) \cdot \vec{c}|\end{equation}
+\section{Vektorgeometrie}
+\subsection{Gerade}
+Vektorielle Gleichung der Geraden
+\begin{equation}g: \vec{s} = \vec{p} + \lambda(\vec{q} - \vec{p}) \land \lambda \in \mathbb{R}\end{equation}
+Koordinatengleichung der Geraden (Kartesische Form)
+\begin{equation}Ax + By + C = 0 \quad \mbox{Normale} \quad \vec{n} = (A, B)\end{equation}
+Gerade aus zwei Punkten A und B
+\begin{equation}s = \vec{a} + \lambda (\vec{b} - \vec{a})\end{equation}
+\subsubsection{Abstand von (0,0) von der Geraden}
+\begin{enumerate}
+\item Normalform berechnen ($Ax + By + C = 0$)
+\item Normale bestimmen ($\vec{n} = (A, B)$)
+\item Alle Koeffizienten durch Länge der Normalen dividieren
+\item Koeffizient C ist nun der Vektor von $(0,0)$ zur Geraden
+\item h aus C berechnen ($h =\frac{C}{\sqrt{A^2+B^2}}$)\end{enumerate}
+\subsubsection{Abstand von P zu g}
+\begin{equation}d(R,g) = \frac{\vec{n}}{|\vec{n}|}(r^2 - p^2)\end{equation}
+\subsubsection{Abstand von P zu g ($\mathbb{R}^3$)}
+$g: P, Q$ und $R \notin g$ und $\vec{q} - \vec{p} = \vec{u}$\\
+\begin{equation}d(R,g) = h = \frac{|(\vec{r} \cdot \vec{p}) \times (\vec{q} - \vec{p})|}{|\vec{q} - \vec{p}|} = \frac{|(\vec{r} \cdot \vec{p}) \times \vec{u}|}{|\vec{u}|}\end{equation}
+\subsubsection{Abstand zwischen zwei Geraden}
+Spat zwischen den Geraden aufspannen
+\begin{equation}h = \frac{|(\vec{a} \times \vec{b}) \cdot (p_1 - p_0)|}{|\vec{a} \times \vec{b}|}\end{equation}
+\subsection{Ebene im Raum}
+Vektorform: $\vec{s} = \vec{a} + \lambda (\vec{b} - \vec{a}) + \alpha (\vec{c} - \vec{a})$\\
+Kartesische Form: $Ax+By+Cz+D=0$\\
+Normale: $\vec{n} = (A, B, C) \bot \Sigma$\\\\
+Bestimmung der Normalform: Zuerst $\vec{n}$ bestimmen aus $\vec{n} = (\vec{b} - \vec{a}) \times (\vec{c} - \vec{a})$, anschliessend Punkt einsetzen und $D$ ausrechnen.
+\subsubsection{Abstand vom Ursprung}
+\begin{equation}Ax + By + Cz + D = 0\end{equation}
+\begin{equation}\frac{A}{\sqrt{A^2+B^2+C^2}}x+\frac{B}{\sqrt{A^2+B^2+C^2}}y + \frac{C}{\sqrt{A^2+B^2+C^2}}z + \frac{D}{\sqrt{A^2+B^2+C^2}} = 0\end{equation}
+Damit ist $h = \frac{D}{\sqrt{A^2+B^2+C^2}}$
+\subsubsection{Abstand eines Punktes zu einer Ebene}
+Mit $P = (p_1, p_2, p_3)$
+\begin{equation}h = d(P, \Sigma) = \frac{A \cdot p_1}{\sqrt{A^2+B^2+C^2}} + \frac{B \cdot p_2}{\sqrt{A^2+B^2+C^2}} + \frac{C \cdot p_3}{\sqrt{A^2+B^2+C^2}} + \frac{D}{\sqrt{A^2+B^2+C^2}}\end{equation}
+\subsubsection{Schnittpunkt Gerade und Ebene}
+$g: \vec{s} = p + \lambda \vec{u} \quad \land \quad \vec{u} = \vec{q} - \vec{p}$\\
+$\Sigma: Ax+By+Cz+D=0$\\
+$g: x = p_1+\lambda u_1 \quad y=p_2+\lambda u_2 \quad z = p_3 + \lambda u_3$\\\\
+Anschliessend einsetzen in $\Sigma$:
+\begin{equation}A(p_1+\lambda u_1) + B(p_2+\lambda u_2) + C(p_3+\lambda u_3) + D = 0\end{equation}
+Das errechnete $\lambda$ dann in $\vec{s}$ einsetzen und Punkt berechnen.
+\subsubsection{Reflexion Gerade an der Ebene}
+$g: \vec{s} = \vec{p} + \lambda \vec{u} \quad \land \quad \vec{u} = \vec{q} - \vec{p}$\\
+$\Sigma: Ax + By + Cz + D = 0$\\
+Schnittpunkt $S = g \cap \Sigma$ und Spiegelpunkt $p' = \vec{p} + 2 \mu \vec{n} \quad \land \quad \vec{n} = (A,B,C)^T$
+\begin{enumerate}
+\item Normale $\vec{n}$ bestimmen: $\vec{n} = (A,B,C)^T$
+\item Schnittpunkt Gerade / Ebene bestimmen ($\vec{s}$)
+\item Anschliessend Normale von P auf $\Sigma$ bestimmen (Punkt $T: \vec{t} = \vec{p}+ \mu \vec{n}$)
+\item Mit dem $\lambda$ aus der vorherigen Rechnung können wir $p'$ berechnen: $p' = \vec{p} + 2 \cdot \lambda \vec{n}$
+\item Damit ist die gespiegelte Gerade: $g': \vec{s} + \alpha (\vec{p} - \vec{s})$
+\end{enumerate}
+\subsubsection{Winkel zwischen zwei Ebenen}
+\begin{equation}\cos{\Phi} = \frac{A_1A_2+B_1B_2+C_1C_2}{\sqrt{{A_1}^2+{B_1}^2+{C_1}^2}\sqrt{{A_2}^2+{B_2}^2+{C_2}^2}}\end{equation}
+\subsection{Kugel}
+Gleichung der Kugel
+\begin{equation}(x-u)^2+(y-v)^2=R^2\end{equation}
+oder\\
+Kreismittelpunkt $M$, Punkt auf Kreis $s$
+\begin{equation}(\vec{s}-\vec{m}) \cdot (\vec{s} - \vec{m}) = R^2 = |\vec{s}-\vec{m}|^2\end{equation}
+In $\mathbb{R}^3$
+\begin{equation}(x-\frac{A}{2})^2+(y-\frac{B}{2})^2+(z-\frac{C}{2})^2=R^2\end{equation}
+\subsubsection{Schnitt Gerade mit Kugel}
+$g: \vec{s} = \vec{p} + \lambda \vec{u}$\\
+$K: (\vec{s}-\vec{m})(\vec{s}-\vec{m}) = R^2$\\
+\begin{equation}F = g \cap K: [(\vec{p} + \lambda \vec{u})-\vec{m}][(\vec{p} + \lambda \vec{u})-\vec{m}]=R^2\end{equation}
+\begin{equation}\lambda^2(\vec{u} \cdot \vec{u})+2 \lambda (\vec{p}-\vec{m}) + (\vec{p}-\vec{m}) - R^2 = 0\end{equation}
+\begin{eqnarray}(\vec{s}-\vec{m}) \cdot (\vec{s} - \vec{m}) & = & R^2 = |\vec{s}-\vec{m}|^2  \\
+\vec{s} \cdot \vec{s} - 2 (\vec{s} \cdot \vec{m}) + \vec{m} \cdot \vec{m} & = & R^2\\
+(\vec{p} + \lambda \vec{u})^2 - 2 (\vec{p} + \lambda \vec{u} \cdot \vec{m}) + \vec{m}^2 & = & R^2\end{eqnarray}
+\subsection{Andere geometrische Figuren}
+\subsubsection{Tetraeder}
+\begin{equation}V_{Tetraeder} = \frac{1}{6}[\vec{u}, \vec{v}, \vec{w}] = \frac{1}{6}[\vec{u} \cdot (\vec{v} \times \vec{w})]\end{equation}
+\chapter{Matrizen}
+\section{Einleitung}
+Matrix $A$ vom Typ $(m,n)$ ist ein Zahlenschema mit $m$ Zeilen und $n$ Spalten, auch $A_{m \times n}$
+\begin{equation}A = \left(\begin{matrix}a_{11} & a_{12} & ... & a_{1n}\\... & ... & a_{ij} & ...\\a_{m1} & ... & ... & a_{mn}\end{matrix}\right)\end{equation}
+\section{Lineare Gleichungssysteme}
+Koeffizientenmatrix
+\begin{equation}A = \left(\begin{matrix}a_{11} & a_{12}\\a_{21} & a_{22}\end{matrix}\right)\end{equation}
+Inhomogenität
+\begin{equation}b = \left(\begin{matrix}b_{11} \\ b_{21}\end{matrix}\right)\end{equation}
+Erweiterte Koeffizientenmatrix
+\begin{equation}[A,b] = \left(\begin{matrix}a_{11} & a_{12} & b_{11}\\a_{21} & a_{22} & b_{21}\end{matrix}\right)\end{equation}
+Vorgehen zur Lösung linearer Gleichungssysteme mit Matrizen
+\begin{enumerate}\item Matrizen aufstellen
+\item Reduktion der Matrix
+\item Bestimmen Anzahl Lösungen
+\item Berechnung der Lösungen\end{enumerate}
+\section{Spezielle Matrizen}
+\subsection{Nullmatrix}
+\begin{equation}A = \left(\begin{matrix}0 & 0 & ... & 0\\... & ... & 0 & ...\\0 & ... & ... & 0\end{matrix}\right)\end{equation}
+\subsection{Einheitsmatrix}
+\begin{equation}I = \left(\begin{matrix}1 & 0 & 0\\0 & 1 & 0\\0 & 0 & 1\end{matrix}\right)\end{equation}
+Dabei gilt: $A \cdot I = I \cdot A = A$
+\section{Matrizenoperationen}
+\subsection{Addition}
+Zwischen Matrizen gleichen Types
+\begin{equation}A_{m \times n} \pm B_{m \times n} = C_{m \times n}\end{equation}
+\subsection{Skalare Multiplikation}
+\begin{equation}B = \lambda A \quad \to \quad b_{ij} = \lambda \cdot A_{ij}\end{equation}
+B entspricht dem gleichen Typ wie A, Typ wird nicht geändert.
+\subsection{Multiplikation}
+$A_{m \times n}$ multipliziert mit $B_{p \times q}$, nur möglich falls "Anzahl Spalten von A = Anzahl Zeilen von B" ist.
+\begin{equation}C_{n \times p} = A_{m \times n} \cdot B_{p \times q}\end{equation}
+mit
+\begin{eqnarray}c_{ij} = \vec{a}_i \cdot \vec{b}_j & \land & \vec{a}_i = \mbox{i-te Zeilenvektor von A}\\
+& \land & \vec{b}_j = \mbox{j-te Spaltenvektor von B}\\
+& \cdot & \mbox{Skalarprodukt analog Vektoren}\end{eqnarray}
+\subsection{Lineare Gleichungssysteme als Matrizen}
+Wenn $A\vec{x} = \vec{b}$, gesucht ist $\vec{x} = (x,y,z)^T$\\
+Es gilt: $A \cdot A^{-1} = I$, damit ist $\vec{x} = A^{-1} \vec{b}$\\
+D.h. bei 2x2 Matrizen:
+\begin{equation}A = \left(\begin{matrix}a & b\\c & d\end{matrix}\right) \to A^{-1} = \frac{1}{ad -bc}\left(\begin{matrix}d & -b\\-c & a\end{matrix}\right)\end{equation}
+\subsection{Determinanten}
+\begin{equation}det(A) = |A| = ad-bc \quad \mbox{, falls} \quad A = \left(\begin{matrix}a & b\\c & d\end{matrix}\right) \end{equation}
+Die Matrix A ist invertierbar, falls $det(A) \neq 0$\\
+DIe Determinante ist bis auf das Vorzeichen die Fläche des Parallelogramms, welches von den Vektoren $\vec{p} = (a,c)^T$ und $\vec{q} = (b,d)^T$ aufgespannt wird.
+\section{Cramersche Regel}
+Wenn
+\begin{equation}A=\left(\begin{matrix}a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33}\end{matrix}\right) \quad b = \left(\begin{matrix}b_1\\b_2\\b_3\end{matrix}\right)\end{equation}
+ist nach der Cramerschen Regel:\\
+$A_1=\left(\begin{matrix}b_1 & a_{12} & a_{13}\\b_2 & a_{22} & a_{23}\\b_3 & a_{32} & a_{33}\end{matrix}\right) \quad A_2=\left(\begin{matrix}a_{11} & b_1 & a_{13}\\a_{21} & b_2 & a_{23}\\a_{31} & b_3 & a_{33}\end{matrix}\right) \quad A_3=\left(\begin{matrix}a_{11} & a_{12} & b_1\\a_{21} & a_{22} & b_2\\a_{31} & a_{32} & b_3\end{matrix}\right)$\\
+und damit\\
+$x_1 = \frac{det(A_1)}{det(A)} \quad x_2 = \frac{det(A_2)}{det(A)} \quad x_3 = \frac{det(A_3)}{det(A)}$\\
+Wann ist eine Determinante = 0?
+\begin{enumerate}
+\item $A$ enthält eine Zeile (oder Spalte) mit lauter 0
+\item Zwei Zeilen (oder Spalten) sind gleich
+\item Zwei Zeilen (oder Spalten) sind zueinander proportional
+\item Eine Zeile (oder Spalte) ist eine Linearkombination der übrigen Zeilen / Spalten\end{enumerate}
+\subsection{Inverse bestimmen}
+Gauss-Jordan
+\begin{equation}A=\left(\begin{matrix}a_{11} & a_{12} & a_{13} & 1 & 0 & 0\\a_{21} & a_{22} & a_{23} & 0 & 1 & 0\\a_{31} & a_{32} & a_{33} & 0 & 0 & 1\end{matrix}\right)\end{equation}
+Dann nach unten mit Gauss reduzieren und nach oben mit Gauss reduzieren, bis linke Seite der Identitätsmatrix entspricht.
+\end{document}

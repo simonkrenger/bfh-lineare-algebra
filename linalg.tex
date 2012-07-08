@@ -1,6 +1,8 @@
 %Simon Krenger: Lineare Algebra
 
 \documentclass{report}
+\usepackage[left=1.5in, right=1.5in, top=1.0in, bottom=1.0in]{geometry}
+\usepackage{layout}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
@@ -124,11 +126,21 @@ Inhomogenität
 \begin{equation}b = \left(\begin{matrix}b_{11} \\ b_{21}\end{matrix}\right)\end{equation}
 Erweiterte Koeffizientenmatrix
 \begin{equation}[A,b] = \left(\begin{matrix}a_{11} & a_{12} & b_{11}\\a_{21} & a_{22} & b_{21}\end{matrix}\right)\end{equation}
-Vorgehen zur Lösung linearer Gleichungssysteme mit Matrizen
-\begin{enumerate}\item Matrizen aufstellen
-\item Reduktion der Matrix
-\item Bestimmen Anzahl Lösungen
-\item Berechnung der Lösungen\end{enumerate}
+\section{Elementare Zeilenoperationen}
+\begin{enumerate}\item Zeilenaustausch
+\item Multiplikation mit Skalar $\neq 0$
+\item Addition eines Vielfachen einer Zeile\end{enumerate}
+\subsection{Gauss-Jordan Verfahren}
+\begin{enumerate}\item Reduktion der erweiterten Koeffizientenmatrix
+\item Lösung mit Rückwärtssubstitution\end{enumerate}
+\subsection{Rang}
+Wir bezeichnen: n = Anzahl Variablen\\
+m = Anzahl Gleichungen\\\\
+Rg(A): Rang einer Matrix\\
+Rg(A) $\neq$ Rg(A|b): Keine Lösung\\
+Rg(A) = Rg(A|b) $\land$ Rg(A) = n: Genau 1 Lösung\\
+Rg(A) = Rg(A|b) $\land$ Rg(A) < n: Unendlich viele Lösungen\\
+Mit Anzahl freie Parameter: Null(A) = n - Rg(A)
 \chapter{Matrizen}
 Matrix $A$ vom Typ $(m,n)$ ist ein Zahlenschema mit $m$ Zeilen und $n$ Spalten, auch $A_{m \times n}$
 \begin{equation}A = \left(\begin{matrix}a_{11} & a_{12} & ... & a_{1n}\\... & ... & a_{ij} & ...\\a_{m1} & ... & ... & a_{mn}\end{matrix}\right)\end{equation}
@@ -152,7 +164,7 @@ mit
 \begin{eqnarray}c_{ij} = \vec{a}_i \cdot \vec{b}_j & \land & \vec{a}_i = \mbox{i-te Zeilenvektor von A}\\
 & \land & \vec{b}_j = \mbox{j-te Spaltenvektor von B}\\
 & \cdot & \mbox{Skalarprodukt analog Vektoren}\end{eqnarray}
-\subsection{Lineare Gleichungssysteme als Matrizen}
+\section{Lineare Gleichungssysteme als Matrizen}
 Wenn $A\vec{x} = \vec{b}$, gesucht ist $\vec{x} = (x,y,z)^T$\\
 Es gilt: $A \cdot A^{-1} = I$, damit ist $\vec{x} = A^{-1} \vec{b}$\\
 D.h. bei 2x2 Matrizen:
@@ -160,8 +172,8 @@ D.h. bei 2x2 Matrizen:
 \subsection{Determinanten}
 \begin{equation}det(A) = |A| = ad-bc \quad \mbox{, falls} \quad A = \left(\begin{matrix}a & b\\c & d\end{matrix}\right) \end{equation}
 Die Matrix A ist invertierbar, falls $det(A) \neq 0$\\
-DIe Determinante ist bis auf das Vorzeichen die Fläche des Parallelogramms, welches von den Vektoren $\vec{p} = (a,c)^T$ und $\vec{q} = (b,d)^T$ aufgespannt wird.
-\section{Cramersche Regel}
+Die Determinante ist bis auf das Vorzeichen die Fläche des Parallelogramms, welches von den Vektoren $\vec{p} = (a,c)^T$ und $\vec{q} = (b,d)^T$ aufgespannt wird.
+\subsection{Cramersche Regel}
 Wenn
 \begin{equation}A=\left(\begin{matrix}a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33}\end{matrix}\right) \quad b = \left(\begin{matrix}b_1\\b_2\\b_3\end{matrix}\right)\end{equation}
 ist nach der Cramerschen Regel:\\
@@ -194,7 +206,7 @@ Mit $c = 1$ ergibt sich die Identitätsmatrix
 Jedem Punkt eine zusätzliche Koordinate $h$ zugewiesen. Die Transformationsmatrizen werden um eine Zeile und eine Spalte mit Einheitswerten erweitert.\\Rotation:
 \begin{equation}\left(\begin{matrix}x'\\y'\\1\end{matrix}\right) = \left(\begin{matrix}\cos{\phi} & -\sin{\phi} & 0\\ \sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 &  1\end{matrix}\right) \cdot \left(\begin{matrix}x\\y\\1\end{matrix}\right) \end{equation}
 Skalierung:
-\begin{equation}\left(\begin{matrix}x'\\y'\\1\end{matrix}\right) = \left(\begin{matrix}s_x & 0 & 0 \\ 0 s_y & 0 \\ 0 & 0 & 1\end{matrix}\right) \cdot \left(\begin{matrix}x\\y\\1\end{matrix}\right) \end{equation}
+\begin{equation}\left(\begin{matrix}x'\\y'\\1\end{matrix}\right) = \left(\begin{matrix}s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1\end{matrix}\right) \cdot \left(\begin{matrix}x\\y\\1\end{matrix}\right) \end{equation}
 Translation:
 \begin{equation}\left(\begin{matrix}x'\\y'\\1\end{matrix}\right) = \left(\begin{matrix}1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1\end{matrix}\right) \cdot \left(\begin{matrix}x\\y\\1\end{matrix}\right) \end{equation}
 So kann beispielsweise ein Ablauf aus "Verschiebung zum Zentrum (3, -2)", "Rotation um 90 Grad" und "Verschiebung zurück" folgendermassen beschrieben werden:

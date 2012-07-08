@@ -1,4 +1,5 @@
 %Simon Krenger: Lineare Algebra
+
 \documentclass{report}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -13,7 +14,7 @@
 \begin{document}
 \maketitle
 \chapter{Vektoren}
-\section{Vektorrechnung}
+\section{Vektoralgebra}
 Vektor von Punkt A zu Punkt B\begin{equation}\vec{AB} = \vec{b} - \vec{a}\end{equation}
 Nullvektor\begin{equation}\vec{a} + (- \vec{a}) = \vec{0}\end{equation}
 Kommutativität (+)\begin{equation}\vec{a} + \vec{b} = \vec{b} + \vec{a}\end{equation}
@@ -35,10 +36,12 @@ Orthogonalprojektion von $\vec{u}$ auf $\vec{a}$
 \begin{equation}proj_a\vec{u} = \frac{\vec{u} \cdot \vec{a}}{{|\vec{a}|}^2} \cdot \vec{a}\end{equation}
 Vektorprodukt (nur $\mathbb{R}^3$)
 \begin{equation}\vec{a} \times \vec{b} = det\left(\begin{matrix}e_1 & e_2 & e_3 \\ a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3\end{matrix}\right) = (a_2b_3-a_3b_2)e_1 + (a_3b_1-a_1b_3)e_2 + (a_1b_2-a_2b_1)e_3\end{equation}
+\begin{equation}|\vec{a} \times \vec{b}| = |\vec{a}| \cdot |\vec{b}| \cdot \sin{\phi}\end{equation}
 Spatprodukt
 \begin{equation}\vec{u} \cdot (\vec{v} \times \vec{w}) = [\vec{u}, \vec{v}, \vec{w}] = \left|\begin{matrix}u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3\end{matrix}\right|\end{equation}
 Volumen eines Spates
 \begin{equation}V = |(\vec{a} \times \vec{b}) \cdot \vec{c}|\end{equation}
+\newpage
 \section{Vektorgeometrie}
 \subsection{Gerade}
 Vektorielle Gleichung der Geraden
@@ -70,7 +73,8 @@ Bestimmung der Normalform: Zuerst $\vec{n}$ bestimmen aus $\vec{n} = (\vec{b} - 
 \subsubsection{Abstand vom Ursprung}
 \begin{equation}Ax + By + Cz + D = 0\end{equation}
 \begin{equation}\frac{A}{\sqrt{A^2+B^2+C^2}}x+\frac{B}{\sqrt{A^2+B^2+C^2}}y + \frac{C}{\sqrt{A^2+B^2+C^2}}z + \frac{D}{\sqrt{A^2+B^2+C^2}} = 0\end{equation}
-Damit ist $h = \frac{D}{\sqrt{A^2+B^2+C^2}}$
+Damit ist
+\begin{equation}h = \frac{D}{\sqrt{A^2+B^2+C^2}}\end{equation}
 \subsubsection{Abstand eines Punktes zu einer Ebene}
 Mit $P = (p_1, p_2, p_3)$
 \begin{equation}h = d(P, \Sigma) = \frac{A \cdot p_1}{\sqrt{A^2+B^2+C^2}} + \frac{B \cdot p_2}{\sqrt{A^2+B^2+C^2}} + \frac{C \cdot p_3}{\sqrt{A^2+B^2+C^2}} + \frac{D}{\sqrt{A^2+B^2+C^2}}\end{equation}
@@ -113,11 +117,7 @@ $K: (\vec{s}-\vec{m})(\vec{s}-\vec{m}) = R^2$\\
 \subsection{Andere geometrische Figuren}
 \subsubsection{Tetraeder}
 \begin{equation}V_{Tetraeder} = \frac{1}{6}[\vec{u}, \vec{v}, \vec{w}] = \frac{1}{6}[\vec{u} \cdot (\vec{v} \times \vec{w})]\end{equation}
-\chapter{Matrizen}
-\section{Einleitung}
-Matrix $A$ vom Typ $(m,n)$ ist ein Zahlenschema mit $m$ Zeilen und $n$ Spalten, auch $A_{m \times n}$
-\begin{equation}A = \left(\begin{matrix}a_{11} & a_{12} & ... & a_{1n}\\... & ... & a_{ij} & ...\\a_{m1} & ... & ... & a_{mn}\end{matrix}\right)\end{equation}
-\section{Lineare Gleichungssysteme}
+\chapter{Lineare Gleichungssysteme}
 Koeffizientenmatrix
 \begin{equation}A = \left(\begin{matrix}a_{11} & a_{12}\\a_{21} & a_{22}\end{matrix}\right)\end{equation}
 Inhomogenität
@@ -129,6 +129,9 @@ Vorgehen zur Lösung linearer Gleichungssysteme mit Matrizen
 \item Reduktion der Matrix
 \item Bestimmen Anzahl Lösungen
 \item Berechnung der Lösungen\end{enumerate}
+\chapter{Matrizen}
+Matrix $A$ vom Typ $(m,n)$ ist ein Zahlenschema mit $m$ Zeilen und $n$ Spalten, auch $A_{m \times n}$
+\begin{equation}A = \left(\begin{matrix}a_{11} & a_{12} & ... & a_{1n}\\... & ... & a_{ij} & ...\\a_{m1} & ... & ... & a_{mn}\end{matrix}\right)\end{equation}
 \section{Spezielle Matrizen}
 \subsection{Nullmatrix}
 \begin{equation}A = \left(\begin{matrix}0 & 0 & ... & 0\\... & ... & 0 & ...\\0 & ... & ... & 0\end{matrix}\right)\end{equation}
@@ -163,16 +166,105 @@ Wenn
 \begin{equation}A=\left(\begin{matrix}a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33}\end{matrix}\right) \quad b = \left(\begin{matrix}b_1\\b_2\\b_3\end{matrix}\right)\end{equation}
 ist nach der Cramerschen Regel:\\
 $A_1=\left(\begin{matrix}b_1 & a_{12} & a_{13}\\b_2 & a_{22} & a_{23}\\b_3 & a_{32} & a_{33}\end{matrix}\right) \quad A_2=\left(\begin{matrix}a_{11} & b_1 & a_{13}\\a_{21} & b_2 & a_{23}\\a_{31} & b_3 & a_{33}\end{matrix}\right) \quad A_3=\left(\begin{matrix}a_{11} & a_{12} & b_1\\a_{21} & a_{22} & b_2\\a_{31} & a_{32} & b_3\end{matrix}\right)$\\
-und damit\\
-$x_1 = \frac{det(A_1)}{det(A)} \quad x_2 = \frac{det(A_2)}{det(A)} \quad x_3 = \frac{det(A_3)}{det(A)}$\\
+und damit
+\begin{center}
+$x_1 = \frac{det(A_1)}{det(A)} \quad x_2 = \frac{det(A_2)}{det(A)} \quad x_3 = \frac{det(A_3)}{det(A)}$
+\end{center}
 Wann ist eine Determinante = 0?
 \begin{enumerate}
 \item $A$ enthält eine Zeile (oder Spalte) mit lauter 0
 \item Zwei Zeilen (oder Spalten) sind gleich
 \item Zwei Zeilen (oder Spalten) sind zueinander proportional
 \item Eine Zeile (oder Spalte) ist eine Linearkombination der übrigen Zeilen / Spalten\end{enumerate}
-\subsection{Inverse bestimmen}
-Gauss-Jordan
+\subsection{Inversion}
+Nach Gauss-Jordan
 \begin{equation}A=\left(\begin{matrix}a_{11} & a_{12} & a_{13} & 1 & 0 & 0\\a_{21} & a_{22} & a_{23} & 0 & 1 & 0\\a_{31} & a_{32} & a_{33} & 0 & 0 & 1\end{matrix}\right)\end{equation}
 Dann nach unten mit Gauss reduzieren und nach oben mit Gauss reduzieren, bis linke Seite der Identitätsmatrix entspricht.
+\chapter{Lineare Abbildungen}
+\section{Streckung um Faktor A}
+\begin{equation}A=\left(\begin{matrix}c & 0\\0 & c\end{matrix}\right)\end{equation}
+Mit $c = 1$ ergibt sich die Identitätsmatrix
+\section{Rotation}
+\begin{equation}A=\left(\begin{matrix}\cos{\phi} & -\sin{\phi}\\\sin{\phi} & \cos{\phi}\end{matrix}\right) \quad A_{90}=\left(\begin{matrix}0 & -1\\1 & 0\end{matrix}\right) \end{equation}
+\section{Spiegelung an Achse durch Ursprung}
+\begin{equation}A=\left(\begin{matrix}\cos{2 \phi} & \sin{2 \phi} \\ \sin{2\phi} & -\cos{2\phi}\end{matrix}\right) \quad A_{x=y}=\left(\begin{matrix}0 & 1\\1 & 0\end{matrix}\right)\end{equation}
+\section{Scherung}
+\begin{equation}A=\left(\begin{matrix}1 & a \\ 0 & 1\end{matrix}\right)\end{equation}
+\subsection{Homogene Koordinaten}
+Jedem Punkt eine zusätzliche Koordinate $h$ zugewiesen. Die Transformationsmatrizen werden um eine Zeile und eine Spalte mit Einheitswerten erweitert.\\Rotation:
+\begin{equation}\left(\begin{matrix}x'\\y'\\1\end{matrix}\right) = \left(\begin{matrix}\cos{\phi} & -\sin{\phi} & 0\\ \sin{\phi} & \cos{\phi} & 0 \\ 0 & 0 &  1\end{matrix}\right) \cdot \left(\begin{matrix}x\\y\\1\end{matrix}\right) \end{equation}
+Skalierung:
+\begin{equation}\left(\begin{matrix}x'\\y'\\1\end{matrix}\right) = \left(\begin{matrix}s_x & 0 & 0 \\ 0 s_y & 0 \\ 0 & 0 & 1\end{matrix}\right) \cdot \left(\begin{matrix}x\\y\\1\end{matrix}\right) \end{equation}
+Translation:
+\begin{equation}\left(\begin{matrix}x'\\y'\\1\end{matrix}\right) = \left(\begin{matrix}1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1\end{matrix}\right) \cdot \left(\begin{matrix}x\\y\\1\end{matrix}\right) \end{equation}
+So kann beispielsweise ein Ablauf aus "Verschiebung zum Zentrum (3, -2)", "Rotation um 90 Grad" und "Verschiebung zurück" folgendermassen beschrieben werden:
+\begin{equation}\left(\begin{matrix}x'\\y'\\1\end{matrix}\right) =
+\left(\begin{matrix}1 & 0 & 3 \\ 0 & 1 & -2 \\ 0 & 0 & 1\end{matrix}\right) \cdot
+\left(\begin{matrix}0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1\end{matrix}\right) \cdot
+\left(\begin{matrix}1 & 0 & -3 \\ 0 & 1 & 2 \\ 0 & 0 & 1\end{matrix}\right) \cdot\left(\begin{matrix}x\\y\\1\end{matrix}\right) \end{equation}
+Die resultierende Matrix kann dann auf jeden Punkt angewendet werden (und muss nicht immer neu berechnet werden).
+\chapter{Komplexe Zahlen}
+\section{Definitionen}
+$i$ = Imaginäre Einheit
+\begin{equation}i^0 = 1\end{equation}
+\begin{equation}i^1 = i\end{equation}
+\begin{equation}i^2 = -1\end{equation}
+\begin{equation}i^3 = i^2 \cdot i = -i\end{equation}
+\begin{equation}i^4 = (i^2)^2 = 1\end{equation}
+Eine komplexe Zahl setzt sich aus einem Realanteil $a$ und einem Imaginäranteil $b$ zusammen:
+\begin{equation}z = a + bi\end{equation}
+\subsection{Grundoperationen}
+Konjugation von $z = a + bi$:
+\begin{equation}\overline {z} = \overline{(a + bi)} = a-bi\end{equation}
+Weiter gilt:
+\begin{center}$\overline{\overline{c}} = a + bi$\\
+$\overline{c_1} \pm \overline{c_2} = \overline{c_1 \pm c_2}$\\
+$\overline{c_1} \cdot \overline{c_2} = \overline{c_1 \cdot c_2}$\\
+$\frac{\overline{c_1}}{\overline{c_2}} = \overline{(\frac{c_1}{c_2})}$\end{center}
+Betrag von $z$ ($abs()$):
+\begin{equation}r = |z| = \sqrt{a^2 + b^2} = \sqrt{z \cdot \overline{z}}\end{equation}
+\begin{equation}|a \cdot b| = |a||b|\end{equation}
+Addition:
+\begin{equation}z_1 + z_2 = (a_1 + b_1 i) + (a_2 + b_2 i) = (a_1 + a_2) + (b_1 + b_2)i\end{equation}
+Differenz:
+\begin{equation}z_1 - z_2 = (a_1 + b_1 i) - (a_2 + b_2 i) = (a_1 - a_2) + (b_1 - b_2)i\end{equation}
+Multiplikation:
+\begin{equation}z_1 \cdot z_2 = (a_1a_2 - b_1b_2) + (a_1b_2 + a_2b_1)i\end{equation}
+Division:
+\begin{equation}\frac{z_1}{z_2} = (\frac{a_1a_2 + b_1b_2}{{a_2}^2+{b_2}^2}) + (\frac{-a_1b_2+a_2b_1}
+{{a_2}^2+{b_2}^2})i\end{equation}
+\subsubsection{Spezialfälle der Grundoperationen}
+\begin{equation}z  + \overline{z} = (a + bi)+(a - bi) = (a + a)+ (b -b) i = 2a\end{equation}
+\begin{equation}z  - \overline{z} = (a + bi) - (a - bi) = (a - a) + (b - (-b)) i = 2ib\end{equation}
+\begin{equation}z  \cdot \overline{z} = (a + bi)\cdot(a-bi) = a^2 + b^2\end{equation}
+\section{Polarform}
+Die Polarform einer komplexen Zahl ist definiert durch einen Winken ($\phi$) und einen Betrag $r$. Mit $z = a + bi$ ist damit:
+\begin{equation}r = |z| = \sqrt{a^2 + b^2}\end{equation}
+Weiter ist der Winkel ($arg()$):
+\begin{equation}\tan{\phi} = \frac{b}{a}\end{equation}
+Dies gilt in Quadrant I und IV. Für Quadrant II und III gilt: $\phi = \arctan{\frac{b}{a}+\pi}$.\\
+Damit gilt:
+\begin{equation}z = a + bi = r \cos{\phi} + i r \sin{\phi} = r \cdot (\cos{\phi} + i \sin{\phi})\end{equation}
+Dies ergibt dann die Polarform:
+\begin{equation}z = r (\cos{\phi} + i \sin{\phi})\end{equation}
+\subsection{Operationen mit der Polarform}
+Multiplikation
+\begin{equation}z_1 \cdot z_2 = r_1r_2[\cos{(\phi_1 + \phi_2)} + i \sin{(\phi_1 + \phi_2)}]\end{equation}
+Division
+\begin{equation}\frac{z_1}{z_2} = \frac{r_1}{r_2} \cdot [\cos{(\phi_1 - \phi_2)} + i \sin{(\phi_1 - \phi_2)}]\end{equation}
+Potenzen
+\begin{equation}z^n = z_1 \cdot z_2 \cdot ... \cdot z_n = r^n (\cos{\phi} + i \sin{\phi})^n\end{equation}
+Wurzeln
+\begin{equation}z^{\frac{1}{n}} = \sqrt[n]{r}[\cos{(\frac{\phi}{n} + k\frac{2\pi}{n})} + i \sin{(\frac{\phi}{n} + k\frac{2\pi}{n})}] \quad \land \quad k = 0,1,2,...,n-1\end{equation}
+\section{Exponentialschreibweise}
+\begin{equation}z= r e^{i \phi}\end{equation}
+Dabei stellt $r$ den Betrag und $\phi$ das Argument von $z$ dar.\\
+Multiplikation
+\begin{equation}c_1 \cdot c_2 = r_1 \cdot r_2 \cdot e^{i(\phi_1 + \phi_2)}\end{equation}
+Division
+\begin{equation}\frac{c_1}{c_2} = \frac{r_1}{r_2} e^{i(\phi_1 - \phi_2)}\end{equation}
+Potenzen
+\begin{equation}c^n = (r e^{i \phi})^n = r^n e^{i n \phi}\end{equation}
+Wurzeln
+\begin{equation}c^{\frac{1}{n}} = (r e^{i \phi})^{\frac{1}{n}} = r^{\frac{1}{n}}e^{i \frac{\phi}{n} + k \cdot \frac{360}{n}}\end{equation}
 \end{document}

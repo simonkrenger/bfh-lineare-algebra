@@ -26,7 +26,7 @@ Inverses Element (+)\begin{equation}\vec{u} + (- \vec{u}) = \vec{0}\end{equation
 Assozativität ($\cdot$)\begin{equation}\alpha \cdot (\beta \cdot \vec{u}) = (\alpha \cdot \beta) \cdot \vec{u}\end{equation}
 Distributiv I\begin{equation}\alpha \cdot (\vec{u} + \vec{u})  = (\alpha \cdot \vec{u})+(\alpha \cdot \vec{v})\end{equation}
 Betrag\begin{equation}|\vec{a}| = \sqrt{{a_x}^2+{a_y}^2+{a_z}^2}\end{equation}
-Vektor mit Länge 1\begin{equation}\frac{\vec{w}}{|\vec{w}|} = \frac{1}{\vec{w}} \cdot \vec{w}\end{equation}
+Vektor mit Länge 1\begin{equation}\frac{\vec{w}}{|\vec{w}|} = \frac{1}{|\vec{w}|} \cdot \vec{w}\end{equation}
 Die Vektoren $\vec{a}$, $\vec{b}$, $\vec{c}$ heissen linear unabhängig, wenn aus 
 \begin{equation}\alpha \cdot \vec{a} + \beta \cdot \vec{b} + \gamma \cdot \vec{c} = \vec{0} \quad \mbox{also} \quad \alpha = \beta = \gamma = 0\end{equation}
 Skalarprodukt
@@ -177,7 +177,7 @@ Die Determinante ist bis auf das Vorzeichen die Fläche des Parallelogramms, wel
 Wenn
 \begin{equation}A=\left(\begin{matrix}a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33}\end{matrix}\right) \quad b = \left(\begin{matrix}b_1\\b_2\\b_3\end{matrix}\right)\end{equation}
 ist nach der Cramerschen Regel:\\
-$A_1=\left(\begin{matrix}b_1 & a_{12} & a_{13}\\b_2 & a_{22} & a_{23}\\b_3 & a_{32} & a_{33}\end{matrix}\right) \quad A_2=\left(\begin{matrix}a_{11} & b_1 & a_{13}\\a_{21} & b_2 & a_{23}\\a_{31} & b_3 & a_{33}\end{matrix}\right) \quad A_3=\left(\begin{matrix}a_{11} & a_{12} & b_1\\a_{21} & a_{22} & b_2\\a_{31} & a_{32} & b_3\end{matrix}\right)$\\
+\begin{equation}A_1=\left(\begin{matrix}b_1 & a_{12} & a_{13}\\b_2 & a_{22} & a_{23}\\b_3 & a_{32} & a_{33}\end{matrix}\right) \quad A_2=\left(\begin{matrix}a_{11} & b_1 & a_{13}\\a_{21} & b_2 & a_{23}\\a_{31} & b_3 & a_{33}\end{matrix}\right) \quad A_3=\left(\begin{matrix}a_{11} & a_{12} & b_1\\a_{21} & a_{22} & b_2\\a_{31} & a_{32} & b_3\end{matrix}\right)\end{equation}
 und damit
 \begin{center}
 $x_1 = \frac{det(A_1)}{det(A)} \quad x_2 = \frac{det(A_2)}{det(A)} \quad x_3 = \frac{det(A_3)}{det(A)}$
@@ -189,8 +189,10 @@ Wann ist eine Determinante = 0?
 \item Zwei Zeilen (oder Spalten) sind zueinander proportional
 \item Eine Zeile (oder Spalte) ist eine Linearkombination der übrigen Zeilen / Spalten\end{enumerate}
 \subsection{Inversion}
-Nach Gauss-Jordan
-\begin{equation}A=\left(\begin{matrix}a_{11} & a_{12} & a_{13} & 1 & 0 & 0\\a_{21} & a_{22} & a_{23} & 0 & 1 & 0\\a_{31} & a_{32} & a_{33} & 0 & 0 & 1\end{matrix}\right)\end{equation}
+Eine Matrix A ist invertierbar, falls $det(A) \neq 0$. Gesucht ist die Inverse zur Matrix A:
+\begin{equation}A=\left(\begin{matrix}a_{11} & a_{12} & a_{13}\\a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33}\end{matrix}\right)\end{equation}
+Die Einheitsmatrix wird angehängt $(A|E)$:
+\begin{equation}(A|E)=\left(\begin{matrix}a_{11} & a_{12} & a_{13} & 1 & 0 & 0\\a_{21} & a_{22} & a_{23} & 0 & 1 & 0\\a_{31} & a_{32} & a_{33} & 0 & 0 & 1\end{matrix}\right)\end{equation}
 Dann nach unten mit Gauss reduzieren und nach oben mit Gauss reduzieren, bis linke Seite der Identitätsmatrix entspricht.
 \chapter{Lineare Abbildungen}
 \section{Streckung um Faktor A}
